@@ -1,6 +1,6 @@
-import add from '../../index';
+import multiply from '../../index';
 
-test('it should add two numbers', () => {
+test('it should multiply two numbers', () => {
   console.log('testing b:/utils/utils.test.ts');
-  expect(add(0.1, 0.2)).toEqual(0.30000000000000004);
+  expect(multiply(2, 4)).toEqual(8);
 });
