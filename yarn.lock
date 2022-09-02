@@ -1550,10 +1550,10 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@modular-scripts/workspace-resolver@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@modular-scripts/workspace-resolver/-/workspace-resolver-1.0.0.tgz#756f58dac150ff101de8d8ca41f5582c1a960707"
-  integrity sha512-rvYT1Ift7qO5C7RBIXvvgR9TTG32iSyFh9nlWf7FiQrLTQfhbUXqC5jmIVADrp24WPhZVASNNFweNXo4iAllyQ==
+"@modular-scripts/workspace-resolver@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@modular-scripts/workspace-resolver/-/workspace-resolver-1.1.0.tgz#5edacef6cf199c2fd38a395b27f4914b22cb3aa7"
+  integrity sha512-MvhmhlkGo+uOCD1D1XSttqTupHyIdnF49I3tPReYvJkxHKG0+ShxobWTLnj7XXrmZDVDPJ1wtlWOrTpZl19mzA==
   dependencies:
     fs-extra "^10.1.0"
     globby "11.0.4"
@@ -7274,13 +7274,13 @@ mkdirp@1.x, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-modular-scripts@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/modular-scripts/-/modular-scripts-3.2.0.tgz#a0171d484bcb848215b17954afd66a566e7e5313"
-  integrity sha512-A/LvAplQ+Gaa6aRoWH8jvOBNkTjIoRn6GQ2RGC03VK6fcSfE2GlRldrazsDggLC97iDqbo6bOpCGxnyFI2SEyA==
+modular-scripts@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/modular-scripts/-/modular-scripts-3.3.1.tgz#d187ec9950babec9d3abe0cc8c9e30afb7882651"
+  integrity sha512-T5TaHLn8DxgyWFrg0+ejLRWBFyy4xqXy4qRDbNqEzXv9/G/+ry1jBdURMYEOm5O+YadgzgoVi94f30ibraRIYw==
   dependencies:
     "@babel/code-frame" "7.16.7"
-    "@modular-scripts/workspace-resolver" "1.0.0"
+    "@modular-scripts/workspace-resolver" "1.1.0"
     "@rollup/plugin-babel" "5.3.1"
     "@rollup/plugin-commonjs" "22.0.0"
     "@rollup/plugin-json" "4.1.0"
