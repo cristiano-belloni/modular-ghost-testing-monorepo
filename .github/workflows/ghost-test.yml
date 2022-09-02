@@ -29,4 +29,4 @@ jobs:
       - name: Install Dependencies
         run: yarn --frozen-lockfile
       - name: Run Tests
-        run: git checkout ${{ github.event.pull_request.base.head }} && yarn test --changed --ancestors --compareBranch ${{ github.event.pull_request.base.ref }}
+        run: git fetch origin ${{ github.event.pull_request.base.ref }}:${{ github.event.pull_request.base.ref }} && yarn test --changed --ancestors --compareBranch ${{ github.event.pull_request.base.ref }}
