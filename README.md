@@ -12,11 +12,24 @@ graph TD;
     e-->a;
 ```
 
-and a [Github workflow](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/blob/master/.github/workflows/ghost-test.yml) that invokes [`modular test`](https://modular.js.org/commands/test/) with the options `--changed` (test only changed workspaces), `--ancestors` (test only ancestors of changed workspaces) and `--compareBranch` (use specified branch as base, in our case `github.event.pull_request.base.ref`, the PR base according to Github) on open PRs.
+and a [Github workflow](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/blob/master/.github/workflows/ghost-test.yml) triggered by PRs to the `master` branch that invokes [`modular test`](https://modular.js.org/commands/test/) with the following options:
 
-This means that, for every open PR, tests will selectively be executed only on workspaces containing changed files and the workspaces that (directly or indirectly) depend on them.
+1. `--changed` (test only changed workspaces)
+2. `--ancestors` (test only ancestors of changed workspaces)
+3. `--compareBranch` (use specified branch as base for comparison, in our case `{{github.event.pull_request.base.ref}}`, the PR base according to Github).
 
-For example, [this pull request](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/pull/2) modifies one file in workspace `b`. This means that Modular will execute tests in CI for workspace `b` (because it has modifications), workspace `a` (because it directly depends on `b`), and workspaces `e` and `app` (because they depend on `a`, indirectly depending on `b`), like in [this test run](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/runs/8158149222?check_suite_focus=true) summarized below:
+This means that, for every open PR, tests will be selectively executed only on:
+
+1) workspaces containing changed files compared to the base branch 
+2) workspaces that (directly or indirectly) depend on them.
+
+For example, [this pull request](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/pull/2) modifies one file in workspace `b`. This means that [our `ghost-test` workflow](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/blob/master/.github/workflows/ghost-test.yml) will run tests for:
+
+1. workspace `b` (because one file has changed compared to the base branch)
+2. workspace `a` (because it directly depends on `b`)
+3. workspaces `e` and `app` (because they depend on `a`, indirectly depending on `b`)
+
+Compare to [this workflow run on the PR](https://github.com/cristiano-belloni/modular-ghost-testing-monorepo/runs/8158149222?check_suite_focus=true), summarized below:
 
 ```
 PASS test packages/app/src/__tests__/App.test.tsx
