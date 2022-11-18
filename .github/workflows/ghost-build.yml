@@ -28,7 +28,7 @@ jobs:
           cache: 'yarn'
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-      - name: Run Tests
+      - name: Run selective build
         run: |
           git fetch origin ${{ github.event.pull_request.head.ref }}:${{ github.event.pull_request.head.ref }}
           git checkout ${{ github.event.pull_request.head.ref }}
